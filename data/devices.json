@@ -1,0 +1,11 @@
+[
+  {
+    "deviceId": 1,
+    "deviceCode": "DEV-001-A",
+    "deviceName": "\u6570\u63A7\u52A0\u5DE5\u8BBE\u5907",
+    "deviceType": "TrainingDevice",
+    "status": 2,
+    "enabled": true,
+    "lastCommunicationTime": "2026-10-10T08:59:58"
+  }
+]

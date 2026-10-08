@@ -1,0 +1,162 @@
+PRAGMA foreign_keys = ON;
+
+BEGIN TRANSACTION;
+
+INSERT OR IGNORE INTO UserAccount
+(
+    UserId,
+    UserName,
+    PasswordHash,
+    Role,
+    IsEnabled,
+    CreatedAt
+)
+VALUES
+(
+    1,
+    'admin',
+    'NOT_CONFIGURED_FOR_LOGIN',
+    0,
+    1,
+    '2026-10-01T08:00:00'
+),
+(
+    2,
+    'operator01',
+    'NOT_CONFIGURED_FOR_LOGIN',
+    1,
+    1,
+    '2026-10-01T08:00:00'
+),
+(
+    3,
+    'maintainer01',
+    'NOT_CONFIGURED_FOR_LOGIN',
+    2,
+    1,
+    '2026-10-01T08:00:00'
+),
+(
+    4,
+    'auditor01',
+    'NOT_CONFIGURED_FOR_LOGIN',
+    3,
+    1,
+    '2026-10-01T08:00:00'
+);
+
+INSERT OR IGNORE INTO Device
+(
+    DeviceId,
+    DeviceCode,
+    DeviceName,
+    DeviceType,
+    Status,
+    Enabled,
+    LastCommunicationTime
+)
+VALUES
+(
+    1,
+    'DEV-001',
+    '数控加工中心',
+    'CNC',
+    1,
+    1,
+    NULL
+),
+(
+    2,
+    'DEV-002',
+    '三轴振动试验台',
+    'VibrationBench',
+    1,
+    1,
+    NULL
+),
+(
+    3,
+    'DEV-003',
+    '工业循环泵',
+    'Pump',
+    1,
+    1,
+    NULL
+);
+
+INSERT OR IGNORE INTO Booking
+(
+    BookingId,
+    DeviceId,
+    UserId,
+    StartTime,
+    EndTime,
+    Purpose,
+    Status,
+    CreatedAt
+)
+VALUES
+(
+    1,
+    1,
+    2,
+    '2026-10-10T09:00:00',
+    '2026-10-10T10:00:00',
+    '教学加工实验',
+    1,
+    '2026-10-01T09:00:00'
+);
+
+INSERT OR IGNORE INTO Alarm
+(
+    AlarmId,
+    DeviceId,
+    AlarmType,
+    Level,
+    Message,
+    Status,
+    OccurredAt,
+    LastOccurredAt,
+    OccurrenceCount
+)
+VALUES
+(
+    1,
+    3,
+    'Temperature',
+    2,
+    '设备温度达到高温报警等级',
+    0,
+    '2026-10-01T10:00:00',
+    '2026-10-01T10:00:00',
+    1
+);
+
+INSERT OR IGNORE INTO MaintenanceOrder
+(
+    OrderId,
+    DeviceId,
+    SourceAlarmId,
+    AssigneeId,
+    Description,
+    Result,
+    Status,
+    CreatedAt,
+    PlannedStartTime,
+    PlannedEndTime
+)
+VALUES
+(
+    1,
+    2,
+    NULL,
+    3,
+    '执行设备计划维护',
+    '',
+    1,
+    '2026-10-01T11:00:00',
+    '2026-10-10T13:00:00',
+    '2026-10-10T15:00:00'
+);
+
+COMMIT;

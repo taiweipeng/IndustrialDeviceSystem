@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "name": "IndustrialDevice",
+    "type": "plc-project"
+  },
+  "data": {
+    "dataTypes": [],
+    "globalVariableLists": [],
+    "pous": [],
+    "configuration": {
+      "resource": {
+        "tasks": [
+          {
+            "name": "MainTask",
+            "triggering": "Cyclic",
+            "interval": "T#20ms",
+            "priority": 0
+          }
+        ],
+        "instances": [
+          {
+            "name": "IndustrialDeviceInstance",
+            "task": "MainTask",
+            "program": "IndustrialDevice"
+          }
+        ],
+        "globalVariables": []
+      }
+    },
+    "libraries": []
+  }
+}

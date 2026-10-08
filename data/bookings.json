@@ -1,0 +1,12 @@
+[
+  {
+    "bookingId": 1,
+    "deviceId": 1,
+    "userId": 576462,
+    "startTime": "2026-10-10T09:00:00",
+    "endTime": "2026-10-10T10:00:00",
+    "purpose": "20260001-\u8BBE\u5907\u9884\u7EA6\u5B9E\u9A8C",
+    "status": 1,
+    "createdAt": "2026-10-09T09:00:00"
+  }
+]

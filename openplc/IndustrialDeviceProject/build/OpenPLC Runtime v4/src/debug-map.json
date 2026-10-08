@@ -1,0 +1,112 @@
+{
+  "version": 2,
+  "md5": "b53f57fb653726f5cc6320b7b34483cb",
+  "typeTags": {
+    "BOOL": 0,
+    "SINT": 1,
+    "USINT": 2,
+    "INT": 3,
+    "UINT": 4,
+    "DINT": 5,
+    "UDINT": 6,
+    "LINT": 7,
+    "ULINT": 8,
+    "REAL": 9,
+    "LREAL": 10,
+    "BYTE": 11,
+    "WORD": 12,
+    "DWORD": 13,
+    "LWORD": 14,
+    "TIME": 15,
+    "DATE": 16,
+    "TOD": 17,
+    "DT": 18,
+    "STRING": 19,
+    "WSTRING": 20
+  },
+  "arrays": [
+    {
+      "index": 0,
+      "count": 11
+    }
+  ],
+  "leaves": [
+    {
+      "arrayIdx": 0,
+      "elemIdx": 0,
+      "path": "INDUSTRIALDEVICEINSTANCE.UPDATETIMER.IN",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 1,
+      "path": "INDUSTRIALDEVICEINSTANCE.UPDATETIMER.PT",
+      "type": "TIME",
+      "size": 8
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 2,
+      "path": "INDUSTRIALDEVICEINSTANCE.UPDATETIMER.Q",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 3,
+      "path": "INDUSTRIALDEVICEINSTANCE.UPDATETIMER.ET",
+      "type": "TIME",
+      "size": 8
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 4,
+      "path": "INDUSTRIALDEVICEINSTANCE.TEMPERATURERAW",
+      "type": "UINT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 5,
+      "path": "INDUSTRIALDEVICEINSTANCE.PRESSURERAW",
+      "type": "UINT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 6,
+      "path": "INDUSTRIALDEVICEINSTANCE.VIBRATIONRAW",
+      "type": "UINT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 7,
+      "path": "INDUSTRIALDEVICEINSTANCE.SCENARIO",
+      "type": "UINT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 8,
+      "path": "INDUSTRIALDEVICEINSTANCE.ISRUNNING",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 9,
+      "path": "INDUSTRIALDEVICEINSTANCE.FAULTSIGNAL",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 10,
+      "path": "INDUSTRIALDEVICEINSTANCE.EMERGENCYSTOP",
+      "type": "BOOL",
+      "size": 1
+    }
+  ]
+}

@@ -11,6 +11,17 @@
   <ItemGroup>
     <ProjectReference Include="..\IndustrialDeviceSystem.Core\IndustrialDeviceSystem.Core.csproj" />
     <ProjectReference Include="..\IndustrialDeviceSystem.Infrastructure\IndustrialDeviceSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\IndustrialDeviceSystem.Simulator\IndustrialDeviceSystem.Simulator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\IndustrialDeviceSystem.Infrastructure\database\init.sql" Link="database\init.sql" CopyToOutputDirectory="PreserveNewest" />
+
+    <None Include="..\IndustrialDeviceSystem.Infrastructure\database\seed.sql" Link="database\seed.sql" CopyToOutputDirectory="PreserveNewest" />
+
+    <None Include="..\config\student-profile.json"
+      Link="config\student-profile.json"
+      CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

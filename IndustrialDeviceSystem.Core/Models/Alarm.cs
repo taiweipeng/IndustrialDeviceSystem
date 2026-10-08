@@ -21,4 +21,8 @@ public sealed class Alarm
     public DateTime LastOccurredAt { get; set; }
 
     public int OccurrenceCount { get; set; } = 1;
+
+    public int? AcknowledgedBy { get; set; }
+    public DateTime? AcknowledgedAt { get; set; }
+    public DateTime? ClearedAt { get; set; }
 }

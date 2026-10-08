@@ -1,4 +1,4 @@
-﻿namespace IndustrialDeviceSystem.Infrastructure
+namespace IndustrialDeviceSystem.Infrastructure
 {
     public class Class1
     {

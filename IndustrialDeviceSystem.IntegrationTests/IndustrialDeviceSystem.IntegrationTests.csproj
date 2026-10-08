@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -24,6 +24,11 @@
 
   <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\learn\DotNet\IndustrialDeviceSystem\IndustrialDeviceSystem.Infrastructure\database\init.sql" Link="database\init.sql" CopyToOutputDirectory="PreserveNewest" />
+
+    <None Include="D:\learn\DotNet\IndustrialDeviceSystem\IndustrialDeviceSystem.Infrastructure\database\seed.sql" Link="database\seed.sql" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

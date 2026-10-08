@@ -1,0 +1,74 @@
+name: Industrial Device System CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build, Test and Format
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    env:
+      DOTNET_NOLOGO: "true"
+      DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+
+      # GitHub服务器上不运行OpenPLC实时通信测试
+      RUN_OPENPLC_LIVE_TESTS: "0"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install .NET 8 SDK
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore dependencies
+        run: dotnet restore IndustrialDeviceSystem.sln
+
+      - name: Build solution
+        run: >
+          dotnet build IndustrialDeviceSystem.sln
+          --configuration Release
+          --no-restore
+          /p:ContinuousIntegrationBuild=true
+
+      - name: Run unit tests
+        run: >
+          dotnet test
+          tests/IndustrialDeviceSystem.Tests/IndustrialDeviceSystem.Tests.csproj
+          --configuration Release
+          --no-build
+          --logger "trx;LogFileName=unit-tests.trx"
+          --results-directory TestResults/Unit
+
+      - name: Run integration tests
+        run: >
+          dotnet test
+          tests/IndustrialDeviceSystem.IntegrationTests/IndustrialDeviceSystem.IntegrationTests.csproj
+          --configuration Release
+          --no-build
+          --logger "trx;LogFileName=integration-tests.trx"
+          --results-directory TestResults/Integration
+
+      - name: Verify code formatting
+        run: >
+          dotnet format IndustrialDeviceSystem.sln
+          --verify-no-changes
+          --no-restore
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: TestResults/**/*.trx
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,0 +1,42 @@
+{
+  "studentId": "20260003",
+  "githubUser": "student-c",
+  "sampleIntervalSeconds": 3,
+  "maximumCommunicationFailures": 3,
+  "temperatureThresholds": {
+    "warning": 57,
+    "high": 77,
+    "emergency": 87
+  },
+  "devices": [
+    {
+      "deviceCode": "DEV-260003-078",
+      "deviceName": "\u6DB2\u538B\u8BD5\u9A8C\u8BBE\u5907",
+      "deviceType": "HydraulicDevice"
+    },
+    {
+      "deviceCode": "DEV-001",
+      "deviceName": "\u6570\u63A7\u52A0\u5DE5\u4E2D\u5FC3",
+      "deviceType": "CNC"
+    },
+    {
+      "deviceCode": "DEV-002",
+      "deviceName": "\u4E09\u8F74\u632F\u52A8\u8BD5\u9A8C\u53F0",
+      "deviceType": "VibrationBench"
+    },
+    {
+      "deviceCode": "DEV-003",
+      "deviceName": "\u5DE5\u4E1A\u5FAA\u73AF\u6CF5",
+      "deviceType": "Pump"
+    }
+  ],
+  "existingBooking": {
+    "start": "2026-10-10T16:00:00",
+    "end": "2026-10-10T17:00:00"
+  },
+  "faultSequence": [
+    false,
+    true,
+    false
+  ]
+}

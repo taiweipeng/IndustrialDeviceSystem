@@ -23,4 +23,8 @@ public sealed class MaintenanceOrder
     public DateTime? StartedAt { get; set; }
 
     public DateTime? CompletedAt { get; set; }
+
+    public DateTime? PlannedStartTime { get; set; }
+
+    public DateTime? PlannedEndTime { get; set; }
 }
